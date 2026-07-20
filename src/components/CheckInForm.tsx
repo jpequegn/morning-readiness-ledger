@@ -8,6 +8,8 @@ import type { Rating, SubjectiveAnswers } from "../readiness/model";
 
 type CheckInFormProps = {
   onComplete: (answers: SubjectiveAnswers, note: string) => void;
+  initialValues?: QuickCheckInValues;
+  submitLabel?: string;
 };
 
 type ScalePrompt = {
@@ -82,8 +84,8 @@ function FlagControl({
   );
 }
 
-export function CheckInForm({ onComplete }: CheckInFormProps) {
-  const [values, setValues] = useState<QuickCheckInValues>(initialQuickCheckIn);
+export function CheckInForm({ onComplete, initialValues = initialQuickCheckIn, submitLabel = "Complete check-in" }: CheckInFormProps) {
+  const [values, setValues] = useState<QuickCheckInValues>(initialValues);
 
   function updateValue<Key extends keyof QuickCheckInValues>(key: Key, value: QuickCheckInValues[Key]) {
     setValues((current) => ({ ...current, [key]: value }));
@@ -117,7 +119,7 @@ export function CheckInForm({ onComplete }: CheckInFormProps) {
           value={values.note}
         />
       </label>
-      <button className="complete-button" type="submit">Complete check-in</button>
+      <button className="complete-button" type="submit">{submitLabel}</button>
     </form>
   );
 }

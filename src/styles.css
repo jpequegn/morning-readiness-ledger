@@ -81,6 +81,10 @@ textarea { background: #ffffff; border: 1px solid #b8c5bb; border-radius: 4px; c
 
 .complete-button:hover { background: #183b29; }
 
+.text-button { background: transparent; border: 0; color: #244d35; cursor: pointer; font-weight: 700; padding: 6px 0; text-decoration: underline; text-underline-offset: 3px; }
+
+.text-button:focus-visible { outline: 3px solid #91b6a0; outline-offset: 2px; }
+
 .completion-notice { border-top: 3px solid #244d35; margin-top: 34px; padding-top: 18px; }
 
 .completion-notice h2 { font-size: 1.4rem; margin: 6px 0; }
