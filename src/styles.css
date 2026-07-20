@@ -110,6 +110,35 @@ textarea { background: #ffffff; border: 1px solid #b8c5bb; border-radius: 4px; c
 
 .saved-at { color: #607065; font-size: 0.85rem; margin-bottom: 2px; }
 
+.ledger-review { border-top: 1px solid #d7ded7; margin-top: 64px; padding-top: 28px; }
+
+.section-heading { align-items: baseline; display: flex; gap: 16px; justify-content: space-between; }
+.section-heading h2, .section-heading h3 { font-size: 1.35rem; margin: 5px 0 18px; }
+.section-heading > p { color: #607065; font-size: 0.9rem; margin: 0; }
+.review-empty { color: #435148; }
+
+.table-wrap { overflow-x: auto; }
+.ledger-table { border-collapse: collapse; min-width: 480px; width: 100%; }
+.ledger-table th, .ledger-table td { border-bottom: 1px solid #d7ded7; padding: 12px 8px; text-align: left; }
+.ledger-table th { color: #607065; font-size: 0.8rem; font-weight: 650; }
+.ledger-table th:first-child, .ledger-table td:first-child { padding-left: 0; }
+.ledger-table th:last-child, .ledger-table td:last-child { padding-right: 0; text-align: right; }
+.ledger-table .selected-row { background: #edf3ed; }
+
+.band-pill { border: 1px solid currentColor; border-radius: 4px; font-size: 0.8rem; font-weight: 700; padding: 3px 6px; }
+.band-build { color: #27633e; }
+.band-maintain { color: #35605c; }
+.band-protect { color: #8a5b12; }
+.band-recover { color: #8b3e25; }
+
+.raw-answers { border-top: 2px solid #244d35; margin-top: 28px; padding-top: 16px; }
+.raw-answers .section-heading { align-items: start; }
+.raw-answers .section-heading > p { max-width: 46%; text-align: right; }
+.answers-grid { display: grid; gap: 1px; grid-template-columns: repeat(3, 1fr); margin: 0; }
+.answers-grid div { background: #e4ebe5; padding: 12px; }
+.answers-grid dt { color: #435148; font-size: 0.82rem; }
+.answers-grid dd { font-size: 1.05rem; font-weight: 700; margin: 4px 0 0; }
+
 @media (max-width: 560px) {
   .app-shell { padding: 20px 16px 48px; }
   .masthead { align-items: flex-start; flex-direction: column; }
@@ -118,4 +147,7 @@ textarea { background: #ffffff; border: 1px solid #b8c5bb; border-radius: 4px; c
   .scale-options { gap: 6px; }
   .scale-options button { min-width: 42px; padding: 8px 10px; }
   .wearable-context { grid-template-columns: 1fr; }
+  .section-heading { align-items: start; flex-direction: column; gap: 0; }
+  .raw-answers .section-heading > p { max-width: none; text-align: left; }
+  .answers-grid { grid-template-columns: repeat(2, 1fr); }
 }

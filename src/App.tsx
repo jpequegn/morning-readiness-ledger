@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { CheckInForm } from "./components/CheckInForm";
+import { LedgerReview } from "./components/LedgerReview";
 import { ReadinessResult } from "./components/ReadinessResult";
 import { quickCheckInFromAnswers } from "./readiness/checkIn";
 import { createLedgerEntry, localDateKey, readLedger, upsertEntry, writeLedger, type LedgerEntry } from "./readiness/ledger";
@@ -43,6 +44,7 @@ export function App() {
           />
         )}
       </section>
+      <LedgerReview entries={entries} />
     </main>
   );
 }
