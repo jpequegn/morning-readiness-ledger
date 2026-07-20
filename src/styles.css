@@ -139,6 +139,16 @@ textarea { background: #ffffff; border: 1px solid #b8c5bb; border-radius: 4px; c
 .answers-grid dt { color: #435148; font-size: 0.82rem; }
 .answers-grid dd { font-size: 1.05rem; font-weight: 700; margin: 4px 0 0; }
 
+.privacy-controls { border-top: 1px solid #d7ded7; margin-top: 48px; padding-top: 28px; }
+.privacy-actions { align-items: center; display: flex; flex-wrap: wrap; gap: 14px; }
+.secondary-button, .danger-button { border-radius: 4px; cursor: pointer; font-weight: 700; min-height: 40px; padding: 8px 12px; }
+.secondary-button { background: #ffffff; border: 1px solid #52725c; color: #244d35; }
+.secondary-button:disabled, .text-button:disabled { color: #9aa59d; cursor: not-allowed; }
+.clear-confirmation { align-items: center; display: flex; flex-wrap: wrap; gap: 12px; }
+.clear-confirmation span { color: #435148; }
+.danger-button { background: #8b3e25; border: 1px solid #8b3e25; color: #ffffff; }
+.danger-text { color: #8b3e25; }
+
 @media (max-width: 560px) {
   .app-shell { padding: 20px 16px 48px; }
   .masthead { align-items: flex-start; flex-direction: column; }
@@ -150,4 +160,5 @@ textarea { background: #ffffff; border: 1px solid #b8c5bb; border-radius: 4px; c
   .section-heading { align-items: start; flex-direction: column; gap: 0; }
   .raw-answers .section-heading > p { max-width: none; text-align: left; }
   .answers-grid { grid-template-columns: repeat(2, 1fr); }
+  .privacy-actions, .clear-confirmation { align-items: start; flex-direction: column; }
 }

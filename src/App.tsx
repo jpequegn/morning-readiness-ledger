@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { CheckInForm } from "./components/CheckInForm";
 import { LedgerReview } from "./components/LedgerReview";
+import { PrivacyControls } from "./components/PrivacyControls";
 import { ReadinessResult } from "./components/ReadinessResult";
 import { quickCheckInFromAnswers } from "./readiness/checkIn";
 import { createLedgerEntry, localDateKey, readLedger, upsertEntry, writeLedger, type LedgerEntry } from "./readiness/ledger";
@@ -18,6 +19,12 @@ export function App() {
     writeLedger(window.localStorage, nextEntries);
     setEntries(nextEntries);
     setEditing(false);
+  }
+
+  function clearEntries() {
+    writeLedger(window.localStorage, []);
+    setEntries([]);
+    setEditing(true);
   }
 
   return (
@@ -45,6 +52,7 @@ export function App() {
         )}
       </section>
       <LedgerReview entries={entries} />
+      <PrivacyControls entries={entries} onClear={clearEntries} />
     </main>
   );
 }
