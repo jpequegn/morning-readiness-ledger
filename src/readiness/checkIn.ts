@@ -33,3 +33,15 @@ export function answersFromQuickCheckIn(values: QuickCheckInValues): SubjectiveA
     workPressure: values.mentalLoad,
   };
 }
+
+export function quickCheckInFromAnswers(answers: SubjectiveAnswers, note: string): QuickCheckInValues {
+  return {
+    sleepQuality: answers.sleepQuality,
+    bodyLoad: answers.fatigue,
+    mentalLoad: answers.stress,
+    headspace: answers.mood,
+    illnessPresent: answers.illness >= 3,
+    injuryPresent: answers.injury >= 3,
+    note,
+  };
+}
