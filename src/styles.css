@@ -85,11 +85,30 @@ textarea { background: #ffffff; border: 1px solid #b8c5bb; border-radius: 4px; c
 
 .text-button:focus-visible { outline: 3px solid #91b6a0; outline-offset: 2px; }
 
-.completion-notice { border-top: 3px solid #244d35; margin-top: 34px; padding-top: 18px; }
+.result-panel { border-top: 3px solid #244d35; margin-top: 34px; padding-top: 18px; }
 
-.completion-notice h2 { font-size: 1.4rem; margin: 6px 0; }
+.result-protect { border-color: #a46a18; }
+.result-recover { border-color: #8b3e25; }
 
-.completion-notice p:last-child { color: #435148; line-height: 1.5; }
+.band-line { align-items: baseline; display: flex; gap: 12px; }
+
+.band-line h2 { font-size: 1.7rem; margin: 6px 0; }
+
+.band-line span { color: #607065; font-size: 0.9rem; }
+
+.guidance { color: #435148; line-height: 1.5; margin-bottom: 22px; }
+
+.result-details { border-top: 1px solid #d7ded7; margin: 0; }
+
+.result-details div { border-bottom: 1px solid #d7ded7; display: grid; gap: 5px; padding: 14px 0; }
+.result-details dt { color: #607065; font-size: 0.85rem; }
+.result-details dd { margin: 0; }
+
+.wearable-context { align-items: start; border-bottom: 1px solid #d7ded7; display: grid; gap: 12px; grid-template-columns: minmax(138px, 0.7fr) 1.3fr; padding: 18px 0; }
+.wearable-context h3 { font-size: 1.05rem; margin: 5px 0 0; }
+.wearable-context p:last-child { color: #435148; line-height: 1.5; margin: 0; }
+
+.saved-at { color: #607065; font-size: 0.85rem; margin-bottom: 2px; }
 
 @media (max-width: 560px) {
   .app-shell { padding: 20px 16px 48px; }
@@ -98,4 +117,5 @@ textarea { background: #ffffff; border: 1px solid #b8c5bb; border-radius: 4px; c
   h1 { font-size: 1.8rem; }
   .scale-options { gap: 6px; }
   .scale-options button { min-width: 42px; padding: 8px 10px; }
+  .wearable-context { grid-template-columns: 1fr; }
 }

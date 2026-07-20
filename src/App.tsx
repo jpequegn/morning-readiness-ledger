@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { CheckInForm } from "./components/CheckInForm";
+import { ReadinessResult } from "./components/ReadinessResult";
 import { quickCheckInFromAnswers } from "./readiness/checkIn";
 import { createLedgerEntry, localDateKey, readLedger, upsertEntry, writeLedger, type LedgerEntry } from "./readiness/ledger";
 import type { SubjectiveAnswers } from "./readiness/model";
@@ -29,12 +30,11 @@ export function App() {
         <h1 id="ledger-heading">Set the capacity for the day.</h1>
         <p className="intro">Record how you feel before reviewing any wearable context. Your entries stay in this browser.</p>
         {todayEntry && !editing ? (
-          <section className="completion-notice" aria-live="polite">
-            <p className="eyebrow">Recorded</p>
-            <h2>Your subjective check-in is complete.</h2>
-            <p>Saved locally at {new Date(todayEntry.updatedAt).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}.</p>
+          <>
+            <ReadinessResult entry={todayEntry} />
+            <p className="saved-at">Saved locally at {new Date(todayEntry.updatedAt).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}.</p>
             <button className="text-button" onClick={() => setEditing(true)} type="button">Edit today&apos;s check-in</button>
-          </section>
+          </>
         ) : (
           <CheckInForm
             initialValues={todayEntry ? quickCheckInFromAnswers(todayEntry.answers, todayEntry.note) : undefined}
