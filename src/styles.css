@@ -34,9 +34,64 @@ h1 { margin: 8px 0 16px; font-size: 2.25rem; line-height: 1.08; letter-spacing: 
 
 .intro { max-width: 58ch; color: #435148; font-size: 1.05rem; line-height: 1.55; }
 
+.checkin-form { margin-top: 34px; }
+
+.checkin-questions { border-top: 1px solid #d7ded7; }
+
+.checkin-row { border: 0; border-bottom: 1px solid #d7ded7; margin: 0; padding: 20px 0; }
+
+.checkin-row legend { font-weight: 650; padding: 0 0 12px; }
+
+.scale-options, .binary-options { display: flex; gap: 8px; }
+
+.scale-options button, .binary-options button {
+  appearance: none;
+  background: #ffffff;
+  border: 1px solid #b8c5bb;
+  border-radius: 4px;
+  color: #24372a;
+  cursor: pointer;
+  min-height: 40px;
+  min-width: 44px;
+  padding: 8px 12px;
+}
+
+.binary-options button { min-width: 88px; }
+
+.scale-options button:hover, .binary-options button:hover { border-color: #52725c; }
+
+.scale-options button:focus-visible, .binary-options button:focus-visible, .complete-button:focus-visible, textarea:focus-visible {
+  outline: 3px solid #91b6a0;
+  outline-offset: 2px;
+}
+
+.scale-options .selected, .binary-options .selected { background: #244d35; border-color: #244d35; color: #ffffff; }
+
+.binary-options .warning.selected { background: #8b3e25; border-color: #8b3e25; }
+
+.scale-endpoints { color: #607065; display: flex; font-size: 0.8rem; justify-content: space-between; margin-top: 8px; max-width: 248px; }
+
+.note-field { display: grid; gap: 8px; margin-top: 22px; }
+
+.note-field span { font-weight: 650; }
+
+textarea { background: #ffffff; border: 1px solid #b8c5bb; border-radius: 4px; color: #18251e; padding: 10px; resize: vertical; }
+
+.complete-button { background: #244d35; border: 1px solid #244d35; border-radius: 4px; color: #ffffff; cursor: pointer; font-weight: 700; margin-top: 20px; min-height: 44px; padding: 10px 18px; }
+
+.complete-button:hover { background: #183b29; }
+
+.completion-notice { border-top: 3px solid #244d35; margin-top: 34px; padding-top: 18px; }
+
+.completion-notice h2 { font-size: 1.4rem; margin: 6px 0; }
+
+.completion-notice p:last-child { color: #435148; line-height: 1.5; }
+
 @media (max-width: 560px) {
   .app-shell { padding: 20px 16px 48px; }
   .masthead { align-items: flex-start; flex-direction: column; }
   .daily-ledger { padding-top: 56px; }
   h1 { font-size: 1.8rem; }
+  .scale-options { gap: 6px; }
+  .scale-options button { min-width: 42px; padding: 8px 10px; }
 }
